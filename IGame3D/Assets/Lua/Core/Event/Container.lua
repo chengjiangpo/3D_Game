@@ -15,11 +15,31 @@ function Container:ctor(dispatcher)
 end
 
 --[[
+        判断事件监听是否已经添加过了
+]]
+function Container:isExist(event,listener)
+    for name,list in pairs(self.listenerMap) do 
+        for i = 1,#list do 
+            local obj = list[i]
+            if obj and obj.event == event and obj.listener == listener then 
+                return true 
+            end
+        end
+    end
+
+    return false 
+end
+
+--[[
         添加事件监听
 ]]
 function Container:addListener(event,callback,listener)
-    local obj = Listener.new(event,callback,listener)
+    if self:isExist(event,listener) then 
+        warn(string.format("event[ %s ] is alread added!",event.name))
+        return 
+    end
     
+    local obj = Listener.new(event,callback,listener)
     self.listenerMap[event] = self.listenerMap[event] or {}
     table.insert(self.listenerMap[event],obj)
 end
@@ -39,7 +59,7 @@ function  Container:removeByListener(listener)
         local index = 1
         while(index <= #list)
         do 
-            local obj = self.list[index]
+            local obj = list[index]
             if obj.listener and obj.listener == listener then 
                 table.remove( list,index )
             else
@@ -54,8 +74,8 @@ end
 ]]
 function Container:dispatch(event,...)
     -- 调用event中的数据结构接口整理数据
-    local params = {...}
-    if event.handler then 
+    local params = nil 
+    if event.handler and type(handler) == "function" then 
         params = event.handler(...) 
     end
 
@@ -63,8 +83,13 @@ function Container:dispatch(event,...)
     local list = self.listenerMap[event] or {}
     for i = 1,#list do 
         local obj = list[i]
-        if obj and obj:isAble() then 
-            obj:dispatch(event,unpack(params))
+        if obj then 
+            if params then 
+                obj:dispatch(event,params)
+            else 
+                obj:dispatch(event,...)
+            end
+            
             table.insert(dispatchList,obj)
         end
     end

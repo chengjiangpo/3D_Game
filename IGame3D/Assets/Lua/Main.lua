@@ -2,7 +2,7 @@
 
 -- 引入Core库
 Core = require("Core.Init")
-
+App  = require("Game.App")
 
 
 --场景切换通知
@@ -18,7 +18,7 @@ end
 --主入口函数。从这里开始lua逻辑
 function Main()		
     print("Lua logic start")	
-    require("Game").start()
+    require("Game").new():start()
 end
 
 function __G__TRACKBACK__(errorMessage)

@@ -3,7 +3,11 @@
 ]]
 
 local Game = class("Game")
-function Game.start()
+function Game:ctor()
+end
+
+
+function Game:start()
     print("Game.start")
 end
 

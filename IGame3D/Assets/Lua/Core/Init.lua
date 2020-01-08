@@ -16,7 +16,7 @@ Core.Event = import(".Event.Init")
 -- 定义全局日志
 log   = Core.Debug.log
 print = Core.Debug.log
-warn  = Core.Debug.Warn 
+warn  = Core.Debug.warn 
 error = Core.Debug.error
 
 return Core 

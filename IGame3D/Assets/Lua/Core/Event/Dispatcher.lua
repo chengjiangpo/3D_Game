@@ -15,7 +15,7 @@ local Container = import(".Container")
 local Dispatcher = class("Dispatcher")
 
 function Dispatcher:ctor(eventMap)
-     self.eventMap  = eventMap or {} -- 所有的事件map
+     self.events  = eventMap or {} -- 所有的事件map
      self.container = Container.new(self)
 end
 
@@ -23,7 +23,7 @@ function Dispatcher:isEventValid(event,log)
     local eventName = type(event) == "string" and event or event.name
     eventName       = eventName or "none"
 
-    if not self.eventMap[eventName] then 
+    if not self.events[eventName] then 
         if log then 
             warn(string.format( "event[ %s ] is not exist! (key = %s)",eventName,log))
         end
