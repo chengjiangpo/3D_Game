@@ -57,6 +57,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Editor\Custom\CustomSettings.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_LuaInterface_EventObject.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_LuaInterface_LuaConstructor.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_LuaInterface_LuaField.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_LuaInterface_LuaMethod.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_LuaInterface_LuaProperty.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_System_Delegate.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_System_Enum.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_System_Object.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_System_String.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_System_Type.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_UnityEngine_GameObject.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_UnityEngine_Input.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_UnityEngine_Object.cs" />
+     <Compile Include="Assets\ToLua\Editor\Extend\ToLua_UnityEngine_RectTransform.cs" />
+     <Compile Include="Assets\ToLua\Editor\ToLuaExport.cs" />
+     <Compile Include="Assets\ToLua\Editor\ToLuaMenu.cs" />
+     <Compile Include="Assets\ToLua\Editor\ToLuaTree.cs" />
+     <Compile Include="Assets\ToLua\Injection\Editor\CustomCecilRocks\MethodBodyRocks.cs" />
+     <Compile Include="Assets\ToLua\Injection\Editor\ToLuaInjection.cs" />
+     <Compile Include="Assets\ToLua\Injection\Editor\ToluaInjectionBlackListPanel.cs" />
+     <Compile Include="Assets\ToLua\Injection\Editor\ToLuaInjectionHelper.cs" />
+     <Compile Include="Assets\ToLua\Injection\Editor\ToLuaText.cs" />
      <Compile Include="Assets\VSCode\Plugins\Editor\VSCode.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>F:/GitHub/3D_Game/IGame3D/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -309,6 +332,12 @@
  </Reference>
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>C:/soft/unity2018/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="CString">
+ <HintPath>F:/GitHub/3D_Game/IGame3D/Assets/Plugins/CString.dll</HintPath>
+ </Reference>
+ <Reference Include="Debugger">
+ <HintPath>F:/GitHub/3D_Game/IGame3D/Assets/Plugins/Debugger.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>F:/GitHub/3D_Game/IGame3D/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
