@@ -1152,7 +1152,7 @@ namespace LuaInterface
 
             if (n != 0)
             {
-                Debugger.LogWarning("Lua stack top is {0}", n);
+                // Debugger.LogWarning("Lua stack top is {0}", n);
                 return false;
             }
 

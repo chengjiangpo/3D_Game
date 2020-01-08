@@ -14,6 +14,7 @@ public class Main : MonoBehaviour
         // 启动Lua 
         // LuaManager.Instance.Start();
         LuaManager luaManager = gameObject.AddComponent<LuaManager>();
+
     }
 
     // Update is called once per frame

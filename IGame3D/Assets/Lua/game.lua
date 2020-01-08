@@ -2,11 +2,9 @@
         游戏的启动文件
 ]]
 
-local Game = {}
+local Game = class("Game")
 function Game.start()
-    print("Game.Start")
---     UnityEngine.Debug.Log("AAAAAAAAAAA")
-    print("AAAAAAAAA   =====> "..IGame3D.CommonUtils.GetUpdatePath())
+    print("Game.start")
 end
 
 return Game

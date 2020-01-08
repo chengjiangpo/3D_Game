@@ -1,5 +1,10 @@
 
 
+-- 引入Core库
+Core = require("Core.Init")
+
+
+
 --场景切换通知
 function OnLevelWasLoaded(level)
 	collectgarbage("collect")
@@ -13,7 +18,7 @@ end
 --主入口函数。从这里开始lua逻辑
 function Main()		
     print("Lua logic start")	
-    require("game").start()
+    require("Game").start()
 end
 
 function __G__TRACKBACK__(errorMessage)
@@ -22,9 +27,11 @@ function __G__TRACKBACK__(errorMessage)
         msg = msg .. tostring(errorMessage)
         msg = msg .. debug.traceback("", 2)
         msg = msg .. "\n----- Lua error end -----"
-
-        print(msg)
+        error(msg)
     end
 end
 
 local status, msg = xpcall(Main, __G__TRACKBACK__)
+
+collectgarbage("setpause", 100)
+collectgarbage("setstepmul", 5000)

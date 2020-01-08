@@ -85,7 +85,7 @@ namespace IGame3D
         void InitLuaPath()
         {
             List<string> pathList = CommonUtils.GetLuaPath();
-            for(int i = 0; i < pathList.Count; i++)
+            for(int i = 0; i < 1; i++)
             {
                 if(i == 0)
                 {
@@ -101,15 +101,7 @@ namespace IGame3D
 
         void StartMain()
         {
-            Debug.Log("StartMain come in ");   
             lua.DoFile("Main.lua");
-
-            LuaFunction main = lua.GetFunction("Main");
-            main.Call(this.luaContextJson);
-            main.Dispose();
-            main = null;
-            Debug.Log("StartMain end ");   
-    //     Debug.Log(" lua start >>>>>>>>>>>>>>>>>>>>>>>>");
         }
 
         public void LuaGC()
