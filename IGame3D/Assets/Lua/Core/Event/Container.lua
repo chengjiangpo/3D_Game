@@ -6,7 +6,6 @@
 --[[
             记录所有的事件监听对象
 ]]
-
 local Listener          = import(".Listener")
 local Container         = class("Container")
 function Container:ctor(dispatcher)
@@ -35,7 +34,7 @@ end
 ]]
 function Container:addListener(event,callback,listener)
     if self:isExist(event,listener) then 
-        warn(string.format("event[ %s ] is alread added!",event.name))
+        warn(string.format("event listener[ %s ] is alread added!",event.name))
         return 
     end
     

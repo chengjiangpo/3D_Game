@@ -3,8 +3,6 @@
     time:2020-01-08 10:33:56
 ]]
 
-
-
 function class(classname, super)
     local superType = type(super)
     local cls

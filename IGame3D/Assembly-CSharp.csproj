@@ -222,6 +222,7 @@
      <Compile Include="Assets\ToLua\Reflection\LuaMethod.cs" />
      <Compile Include="Assets\ToLua\Reflection\LuaProperty.cs" />
      <Compile Include="Assets\ToLua\Reflection\LuaReflection.cs" />
+     <None Include="Assets\ABAssets\Textures\UI\Texture2D\Texture2D_Number\FightFont1.fnt" />
      <None Include="Assets\ToLua\Injection\InjectionBridgeEditorInfo.xml" />
      <None Include="Assets\ToLua\readme.txt" />
      <None Include="Assets\ToLua\Injection\LuaInjectionSkipPaths.txt" />
