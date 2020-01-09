@@ -2,7 +2,6 @@
 
 -- 引入Core库
 Core = require("Core.Init")
-App  = require("Game.App")
 
 
 --场景切换通知
