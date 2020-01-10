@@ -12,8 +12,8 @@ public class Main : MonoBehaviour
         Debug.Log("Update Path = " + IGame3D.CommonUtils.GetUpdatePath());
 
         // 启动Lua 
-        // LuaManager.Instance.Start();
-        LuaManager luaManager = gameObject.AddComponent<LuaManager>();
+        gameObject.AddComponent<LuaManager>();
+        gameObject.AddComponent<ABLoader>();
 
     }
 

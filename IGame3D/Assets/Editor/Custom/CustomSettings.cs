@@ -200,6 +200,7 @@ public static class CustomSettings
         _GT(typeof(UnityEngine.Debug)),
         _GT(typeof(IGame3D.CommonUtils)),
         _GT(typeof(IGame3D.LuaManager)),
+        _GT(typeof(IGame3D.ABLoader)),
 
     };
 

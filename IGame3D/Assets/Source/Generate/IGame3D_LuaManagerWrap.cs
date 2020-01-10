@@ -13,6 +13,7 @@ public class IGame3D_LuaManagerWrap
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.RegVar("luaContextJson", get_luaContextJson, set_luaContextJson);
+		L.RegVar("Instance", get_Instance, set_Instance);
 		L.EndClass();
 	}
 
@@ -102,6 +103,20 @@ public class IGame3D_LuaManagerWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_Instance(IntPtr L)
+	{
+		try
+		{
+			ToLua.Push(L, IGame3D.LuaManager.Instance);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int set_luaContextJson(IntPtr L)
 	{
 		object o = null;
@@ -117,6 +132,21 @@ public class IGame3D_LuaManagerWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index luaContextJson on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_Instance(IntPtr L)
+	{
+		try
+		{
+			IGame3D.LuaManager arg0 = (IGame3D.LuaManager)ToLua.CheckObject<IGame3D.LuaManager>(L, 2);
+			IGame3D.LuaManager.Instance = arg0;
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
 		}
 	}
 }

@@ -8,9 +8,9 @@ require("Core.Global")
 
 local Core = {}
 
-Core.Debug = import(".Debug")
-Core.Event = import(".Event.Init")
-
+Core.Debug      = import(".Debug")
+Core.Event      = import(".Event.Init")
+Core.Loader     = import(".Loader.Init")
 
 
 -- 定义全局日志

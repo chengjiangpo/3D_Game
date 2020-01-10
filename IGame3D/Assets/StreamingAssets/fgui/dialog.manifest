@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 1529498323
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7055a327f98c07b4cbe77afd44f9d8ea
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8cfd36d84ed37a63bcb3c7ce96d93f72
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/ABAssets/Fgui/Dialog_atlas0.png
+- Assets/ABAssets/Fgui/Dialog_fui.bytes
+Dependencies: []

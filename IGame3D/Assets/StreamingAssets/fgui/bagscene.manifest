@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 1512035525
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f72a105896aabe751018ae29b64e9ec7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8cfd36d84ed37a63bcb3c7ce96d93f72
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/ABAssets/Fgui/BagScene_fui.bytes
+- Assets/ABAssets/Fgui/BagScene_atlas0.png
+Dependencies: []

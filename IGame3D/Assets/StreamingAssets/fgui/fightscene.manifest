@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 3795866146
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 32c2240b805c9699a2f3f863a4b71a6c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8cfd36d84ed37a63bcb3c7ce96d93f72
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/ABAssets/Fgui/FightScene_fui.bytes
+- Assets/ABAssets/Fgui/FightScene_atlas0.png
+Dependencies: []

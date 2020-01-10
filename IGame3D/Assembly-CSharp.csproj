@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ABLoader.cs" />
      <Compile Include="Assets\Scripts\CommonUtils.cs" />
      <Compile Include="Assets\Scripts\FairyGui\Core\BlendMode.cs" />
      <Compile Include="Assets\Scripts\FairyGui\Core\CaptureCamera.cs" />
@@ -255,6 +256,7 @@
      <Compile Include="Assets\Source\Generate\FairyGUI_UIObjectFactoryWrap.cs" />
      <Compile Include="Assets\Source\Generate\FairyGUI_UIPackageWrap.cs" />
      <Compile Include="Assets\Source\Generate\FairyGUI_WindowWrap.cs" />
+     <Compile Include="Assets\Source\Generate\IGame3D_ABLoaderWrap.cs" />
      <Compile Include="Assets\Source\Generate\IGame3D_CommonUtilsWrap.cs" />
      <Compile Include="Assets\Source\Generate\IGame3D_LuaManagerWrap.cs" />
      <Compile Include="Assets\Source\Generate\LuaBinder.cs" />

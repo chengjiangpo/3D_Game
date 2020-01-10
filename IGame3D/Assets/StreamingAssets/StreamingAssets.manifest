@@ -1,0 +1,67 @@
+ManifestFileVersion: 0
+CRC: 1273034344
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: fgui/mainui
+      Dependencies: {}
+    Info_1:
+      Name: fgui/updatescene
+      Dependencies: {}
+    Info_2:
+      Name: fgui/stagescene
+      Dependencies: {}
+    Info_3:
+      Name: fgui/loginscene
+      Dependencies: {}
+    Info_4:
+      Name: fgui/worldscene
+      Dependencies: {}
+    Info_5:
+      Name: fgui/debugpanel
+      Dependencies: {}
+    Info_6:
+      Name: fgui/campain
+      Dependencies: {}
+    Info_7:
+      Name: fgui/popupview
+      Dependencies: {}
+    Info_8:
+      Name: fgui/mail
+      Dependencies: {}
+    Info_9:
+      Name: fgui/homescene
+      Dependencies: {}
+    Info_10:
+      Name: fgui/basic
+      Dependencies: {}
+    Info_11:
+      Name: fgui/home3d
+      Dependencies: {}
+    Info_12:
+      Name: fgui/bagscene
+      Dependencies: {}
+    Info_13:
+      Name: fgui/lineupscene
+      Dependencies: {}
+    Info_14:
+      Name: fgui/fightscene
+      Dependencies: {}
+    Info_15:
+      Name: fgui/common
+      Dependencies: {}
+    Info_16:
+      Name: fgui/dialog
+      Dependencies: {}
+    Info_17:
+      Name: fgui/builder
+      Dependencies: {}
+    Info_18:
+      Name: fgui/task
+      Dependencies: {}
+    Info_19:
+      Name: fgui/heroscene
+      Dependencies: {}
+    Info_20:
+      Name: fgui/fightsimulator
+      Dependencies: {}

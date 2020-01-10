@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 2503143160
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8ec2d50ee1ea405a557374e4b5bb8363
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8cfd36d84ed37a63bcb3c7ce96d93f72
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/ABAssets/Fgui/LineupScene_atlas0.png
+- Assets/ABAssets/Fgui/LineupScene_fui.bytes
+Dependencies: []

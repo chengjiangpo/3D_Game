@@ -10,6 +10,24 @@ namespace IGame3D
         private LuaLooper loop = null;
         public string luaContextJson;
 
+        static private LuaManager instance;
+        static public LuaManager Instance
+        {
+            set
+            {
+                instance = value;
+            }
+            get 
+            {
+                return instance;
+            }
+        }
+
+        LuaManager()
+        {
+            Instance = this;
+        }
+
         void Awake() {
             new LuaResLoader(); //真机上使用
             lua = new LuaState();

@@ -137,6 +137,7 @@ public static class LuaBinder
 		L.BeginModule("IGame3D");
 		IGame3D_CommonUtilsWrap.Register(L);
 		IGame3D_LuaManagerWrap.Register(L);
+		IGame3D_ABLoaderWrap.Register(L);
 		L.EndModule();
 		L.BeginModule("System");
 		L.RegFunction("Action", System_Action);

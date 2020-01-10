@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 2716522065
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4d61f8283a86e6b4660fcb20f5d15d9b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8cfd36d84ed37a63bcb3c7ce96d93f72
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/ABAssets/Fgui/StageScene_fui.bytes
+- Assets/ABAssets/Fgui/StageScene_atlas0.png
+Dependencies: []
