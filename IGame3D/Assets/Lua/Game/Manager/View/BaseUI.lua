@@ -110,7 +110,7 @@ function BaseUI:removeChild(child)
         error("BaseUI:removeChild ui is not init! "..self:formatPath())
         return
     end
-    
+
     if not child then
         warn("BaseUI:removeChild child is nil:"..self:formatPath())
         return
@@ -128,10 +128,20 @@ function BaseUI:removeFromParent()
         error("BaseUI:removeFromParent ui is not init! "..self:formatPath())
         return
     end
+
     local parent = self.ui.parent
     if parent then
         parent:RemoveChild(self.ui)
     end
+end
+
+function BaseUI:getParent()
+    if not self.ui then
+        error("BaseUI:getParent ui is not init! "..self:formatPath())
+        return
+    end
+
+    return self.ui.parent
 end
 
 function BaseUI:formatPath()

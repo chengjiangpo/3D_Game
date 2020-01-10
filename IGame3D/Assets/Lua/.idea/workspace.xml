@@ -23,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseUI.lua" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BaseUI.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game/Manager/View/BaseUI.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="112" column="4" lean-forward="true" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="4" />
+            <state relative-caret-position="432">
+              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -35,17 +35,17 @@
       <file leaf-file-name="Layers.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game/Manager/View/Layers.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+            <state relative-caret-position="432">
+              <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewManager.lua" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ViewManager.lua" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Game/Manager/View/ViewManager.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="891">
+              <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -132,8 +132,8 @@
         <option value="$PROJECT_DIR$/Game.lua" />
         <option value="$PROJECT_DIR$/Game/App.lua" />
         <option value="$PROJECT_DIR$/Game/Manager/View/ViewDefine.lua" />
-        <option value="$PROJECT_DIR$/Game/Manager/View/ViewManager.lua" />
         <option value="$PROJECT_DIR$/Game/Manager/View/BaseUI.lua" />
+        <option value="$PROJECT_DIR$/Game/Manager/View/ViewManager.lua" />
       </list>
     </option>
   </component>
@@ -273,16 +273,15 @@
       <updated>1578551955764</updated>
       <workItem from="1578551956994" duration="14126000" />
       <workItem from="1578622766249" duration="174000" />
-      <workItem from="1578622957378" duration="19245000" />
+      <workItem from="1578622957378" duration="19939000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33545000" />
+    <option name="totallyTimeSpent" value="34239000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -575,22 +574,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Game/Manager/View/Layers.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Manager/View/ViewManager.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="432">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Game/Manager/View/BaseUI.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="112" column="4" lean-forward="true" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="4" />
+        <state relative-caret-position="432">
+          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Manager/View/ViewManager.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
         </state>
       </provider>
     </entry>

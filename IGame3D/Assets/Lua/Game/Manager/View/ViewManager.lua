@@ -16,10 +16,6 @@ function ViewManager:ctor()
 end
 
 function ViewManager:openView(viewType,...)
-    local type = viewType.type
-
-
-
     -- 创建界面并添加到列表中
     local view = require("Game.Views."..viewType.name).new(...)
     view:setParent(App.Layers.UILayer)
@@ -30,11 +26,12 @@ function ViewManager:popView()
 
 end
 
-function ViewManager:clearAllView()
-    local list = self.views or {}
-    for i = 1,#list do
-
+function ViewManager:getCurView()
+    if #self.views == 0 then
+        return nil
     end
+
+    return self.views[#self.views]
 end
 
 
