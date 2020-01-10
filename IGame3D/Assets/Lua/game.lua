@@ -9,12 +9,14 @@ require("Game.App")
 
 local Game = class("Game")
 function Game:ctor()
+
 end
 
 function Game:start()
     print("Game.start")
-    local ui = Core.Loader.FguiLoader:createUI("LoginScene","Scene")
-    fgui.GRoot.inst:AddChild(ui)
+--    local loginView = require("Game.Views.LoginView").new()
+--    loginView:setParent(fgui.GRoot.inst)
+    App.ViewManager:openView(App.Views.LOGIN_VIEW)
 end
 
 return Game
