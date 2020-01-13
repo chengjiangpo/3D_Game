@@ -180,3 +180,43 @@ function handler(obj, method)
         return method(obj, ...)
     end
 end
+
+
+local _internal = {}
+--这里建立一个c# delegate到lua函数的映射，是为了支持self参数，和方便地进行remove操作
+_internal.EventDelegates = {}
+setmetatable(_internal.EventDelegates, {__mode = "k"})
+function getDelegate( func,obj,delegateType )
+    -- body
+    local mapping
+    if obj~=nil then
+        mapping = obj.EventDelegates
+        if mapping==nil then
+            mapping = {}
+            setmetatable(mapping, {__mode = "k"})
+            obj.EventDelegates = mapping
+        end
+    else
+        mapping = _internal.EventDelegates
+    end
+
+    local delegate = mapping[func]
+    if delegate==nil then
+        local realFunc
+        if obj~=nil then
+            realFunc = function(...)
+                func(obj,...)
+            end
+        else
+            realFunc = func
+        end
+
+        delegateType = delegateType or FairyGUI.EventCallback1
+
+        delegate = delegateType(realFunc)
+
+        mapping[func] = delegate
+    end
+
+    return delegate
+end

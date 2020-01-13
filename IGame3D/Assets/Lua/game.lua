@@ -5,7 +5,7 @@
 require("FairyGUI.FairyGUI")
 
 -- 引入App名称空间
-require("Game.App")
+require("App.App")
 
 local Game = class("Game")
 function Game:ctor()
