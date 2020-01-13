@@ -20,14 +20,10 @@ ViewDefine.TYPE =
 --      @name:界面的名称
 --      @type:界面的类型（界面的缓存方式）
 --      @subViews: 系统子界面或切页
---      @initHandler: 创建界面时的数据接口
---      @focusHandler: focus时的数据接口
+--      @dataHandler: 创建界面时的数据接口
  ]]
 ViewDefine.LOGIN_VIEW = {name = "LoginView",    type = 3,
-    initHandler = function()
-        return
-    end,
-    focusHandler = function()
+    dataHandler = function()
         return
     end
 }

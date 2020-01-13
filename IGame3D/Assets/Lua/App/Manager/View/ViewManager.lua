@@ -15,14 +15,18 @@ function ViewManager:ctor()
     self.views = {}
 end
 
+--[[
+--      传递到界面的参数可以参考App.Views中的initHandler接口
+ ]]
 function ViewManager:openView(viewType,...)
+    local params = viewType.dataHandler and viewType.dataHandler(...) or nil
     -- 判断缓存列表中是否有该界面，如果有，直接显示
-    if self:__showView() then
+    if self:__focusView(viewType,params) then
         return
     end
 
     -- 创建界面并添加到列表中
-    local view = require("App.Views."..viewType.name).new(...)
+    local view = require("App.Views."..viewType.name).new(params)
     view:setViewType(viewType)
     self:__onOpenView(view)
 end
@@ -97,7 +101,7 @@ end
 --[[
 --      查找队列中是否有对应的view，如果有则显示(并移除该界面后面的所有的界面)
  ]]
-function ViewManager:__showView(viewType)
+function ViewManager:__focusView(viewType,params)
     local view = nil
     local index = 0
     -- 检查当前界面是否在队列中，如果是，显示该界面
@@ -119,12 +123,12 @@ function ViewManager:__showView(viewType)
             table.remove(self.views,i)
         end
 
-        self:__onViewFocus(view)
+        self:__onViewFocus(view,params)
     end
     return view
 end
 
-function ViewManager:__onViewFocus(view)
+function ViewManager:__onViewFocus(view,params)
     if not view then
         return
     end
@@ -135,7 +139,7 @@ function ViewManager:__onViewFocus(view)
     end
 
     view:setVisible(true)
-    view:onFocus()
+    view:onFocus(params)
 end
 
 function ViewManager:__onViewLoseFocus(view)

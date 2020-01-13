@@ -186,7 +186,7 @@ local _internal = {}
 --这里建立一个c# delegate到lua函数的映射，是为了支持self参数，和方便地进行remove操作
 _internal.EventDelegates = {}
 setmetatable(_internal.EventDelegates, {__mode = "k"})
-function getDelegate( func,obj,delegateType )
+function delegate( func,obj,delegateType )
     -- body
     local mapping
     if obj~=nil then
