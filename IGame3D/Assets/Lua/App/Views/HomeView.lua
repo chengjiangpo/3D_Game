@@ -6,10 +6,10 @@
 -- To change this template use File | Settings | File Templates.
 --
 
-local HomeView = class("HomeView",App.BaseView)
+local HomeView = class("HomeView",App.View.BaseView)
 
-function HomeView:ctor()
-    HomeView.super.ctor(self,"HomeScene","Scene")
+function HomeView:ctor(initData)
+    HomeView.super.ctor(self,"HomeScene","Scene",initData)
     self:initUI()
 end
 

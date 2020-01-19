@@ -10,18 +10,16 @@ App = {}
 
 -- 创建App下的通用事件派发器
 local events   = import(".Manager.Event.Events")
-App.event      = Core.Event.Dispatcher.new(events)
+App.Event      = Core.Event.Dispatcher.new(events)
 
 -- 初始化App下的proxy
-App.proxy      = import(".Manager.Proxy.Init")
+App.Proxy      = import(".Manager.Proxy.Init")
 
 -- 初始化App下的Datas
-App.datas      = import(".Manager.Datas.Init")
+App.Data       = import(".Manager.Datas.Init")
+
+-- 初始化View
+App.View       = import(".Manager.View.Init")
 
 
-App.Layers     = import(".Manager.View.Layers")
-App.BaseUI     = import(".Manager.View.BaseUI")
-App.BaseView   = import(".Manager.View.BaseView")
-App.Views      = import(".Manager.View.Views")
-App.ViewManager = import(".Manager.View.ViewManager").new()
 

@@ -6,10 +6,10 @@
 -- To change this template use File | Settings | File Templates.
 --
 
-local LoginView = class("LoginView",App.BaseView)
+local LoginView = class("LoginView",App.View.BaseView)
 
-function LoginView:ctor()
-    LoginView.super.ctor(self,"LoginScene","Scene")
+function LoginView:ctor(initData)
+    LoginView.super.ctor(self,"LoginScene","Scene",initData)
 
     self:initUI()
 end
@@ -17,8 +17,8 @@ end
 function LoginView:initUI()
     local btnLogin = self:getChild("btn_login")
     btnLogin.onClick:Set(delegate(function()
-        App.ViewManager:openView(App.Views.HOME_VIEW)
-
+--        App.View.Manager:openView(App.View.Views.HOME_VIEW)
+        Core.Model.create("liubei",true)
      end))
 end
 

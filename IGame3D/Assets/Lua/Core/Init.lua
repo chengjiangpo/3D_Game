@@ -8,15 +8,8 @@ require("Core.Global")
 
 local Core = {}
 
-Core.Debug      = import(".Debug")
+Core.Debug      = import(".Debug.Init")
 Core.Event      = import(".Event.Init")
 Core.Loader     = import(".Loader.Init")
-
-
--- 定义全局日志
-log   = Core.Debug.log
-print = Core.Debug.log
-warn  = Core.Debug.warn 
-error = Core.Debug.error
-
+Core.Model      = import(".Model.Init")
 return Core 

@@ -9,6 +9,9 @@ public class IGame3D_ABLoaderWrap
 		L.BeginClass(typeof(IGame3D.ABLoader), typeof(UnityEngine.MonoBehaviour));
 		L.RegFunction("load", load);
 		L.RegFunction("loadAsync", loadAsync);
+		L.RegFunction("unLoad", unLoad);
+		L.RegFunction("unLoadUnUsedAsset", unLoadUnUsedAsset);
+		L.RegFunction("loadAsset", loadAsset);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.RegVar("Instance", get_Instance, null);
@@ -44,6 +47,58 @@ public class IGame3D_ABLoaderWrap
 			LuaFunction arg1 = ToLua.CheckLuaFunction(L, 3);
 			obj.loadAsync(arg0, arg1);
 			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int unLoad(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			IGame3D.ABLoader obj = (IGame3D.ABLoader)ToLua.CheckObject<IGame3D.ABLoader>(L, 1);
+			UnityEngine.AssetBundle arg0 = (UnityEngine.AssetBundle)ToLua.CheckObject<UnityEngine.AssetBundle>(L, 2);
+			bool arg1 = LuaDLL.luaL_checkboolean(L, 3);
+			obj.unLoad(arg0, arg1);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int unLoadUnUsedAsset(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			IGame3D.ABLoader obj = (IGame3D.ABLoader)ToLua.CheckObject<IGame3D.ABLoader>(L, 1);
+			obj.unLoadUnUsedAsset();
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int loadAsset(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			UnityEngine.AssetBundle arg0 = (UnityEngine.AssetBundle)ToLua.CheckObject<UnityEngine.AssetBundle>(L, 1);
+			string arg1 = ToLua.CheckString(L, 2);
+			UnityEngine.Object o = IGame3D.ABLoader.loadAsset(arg0, arg1);
+			ToLua.Push(L, o);
+			return 1;
 		}
 		catch (Exception e)
 		{
