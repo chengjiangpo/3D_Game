@@ -18,7 +18,23 @@ function LoginView:initUI()
     local btnLogin = self:getChild("btn_login")
     btnLogin.onClick:Set(delegate(function()
 --        App.View.Manager:openView(App.View.Views.HOME_VIEW)
-        Core.Model.create("liubei",true)
+        if not self.model then
+            self.model = Core.Model.create("liubei",true)
+            self.model:addListener(Core.Model.EVENTS.LOADED,function(event,data)
+                print("模型加载成功："..data.modelName)
+            end)
+        else
+            local params = {"idle","run","dead" }
+            self.index = self.index or 0
+            self.index = (self.index)%(#params) + 1
+
+            for i = 1,#params do
+                self.model:setBool(params[i],i == self.index)
+            end
+        end
+
+
+
      end))
 end
 

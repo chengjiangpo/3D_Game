@@ -66,5 +66,31 @@ function Dispatcher:dispatch(event,...)
 end
 
 
+--[[
+--      作为组件添加到对象上去
+ ]]
+function Dispatcher:apply(object)
+    local funcList = {
+        "addListener",
+        "removeListener",
+        "removeByListener",
+        "dispatch"
+    }
+
+    if not object then
+        return self
+    end
+
+    object.__event = self
+    for i = 1,#funcList do
+        local func = funcList[i]
+        object[func] = function(object,...)
+            self[func](self, ...)
+        end
+    end
+
+    return self
+end
+
 
 return Dispatcher
