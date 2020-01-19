@@ -44,6 +44,17 @@ function Dispatcher:addListener(event,callback,listener)
 end
 
 --[[
+--      @time:监听的次数
+ ]]
+function Dispatcher:addListenerByTime(time,event,callback,listener)
+    if not self:isEventValid(event,"addListener") then
+        return
+    end
+
+    self.container:addListener(event,callback,listener,time)
+end
+
+--[[
         移除监听
 ]]
 function Dispatcher:removeListener(event)
@@ -72,6 +83,7 @@ end
 function Dispatcher:apply(object)
     local funcList = {
         "addListener",
+        "addListenerByTime",
         "removeListener",
         "removeByListener",
         "dispatch"

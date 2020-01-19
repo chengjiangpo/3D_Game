@@ -20,7 +20,7 @@ function LoginView:initUI()
 --        App.View.Manager:openView(App.View.Views.HOME_VIEW)
         if not self.model then
             self.model = Core.Model.create("liubei",false)
-            self.model:addListener(Core.Model.EVENTS.LOADED,function(event,data)
+            self.model:addListenerByTime(1,Core.Model.EVENTS.LOADED,function(event,data)
                 print("模型加载成功："..data.modelName)
             end)
         else
