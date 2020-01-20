@@ -23,6 +23,7 @@ function LoginView:initUI()
             self.model:addListenerByTime(1,Core.Model.EVENTS.LOADED,function(event,data)
                 print("模型加载成功："..data.modelName)
             end)
+
         else
             local params = {"idle","run","dead" }
             self.index = self.index or 0

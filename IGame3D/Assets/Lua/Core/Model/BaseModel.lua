@@ -12,9 +12,9 @@ function BaseModel:ctor(modelName)
     self:__regiseterEvents()
     self.modelName  = modelName
     self.model      = nil
+    self.params     = {}
+    self:__initSwitch()
 end
-
-
 
 function BaseModel:setModel(model)
     self.model = model
@@ -30,14 +30,132 @@ function BaseModel:isLoaded()
     return self.model ~= nil
 end
 
-
 function BaseModel:onLoaded()
+    self:__initWithParams()
+
     self:dispatch(Core.Model.EVENTS.LOADED,self.modelName)
 end
 
 
 
+-----------------------------------------------------------------------------------------------
+--------------------------------      属性设置和获取        ------------------------------------
+-- 父节点
+function BaseModel:setParent(parent)
+    self:__setParams("parent",parent)
+end
 
+function BaseModel:getParent()
+    return self:__getParams("parent")
+end
+
+-- 位置
+function BaseModel:setPosition(x,y,z)
+    local pos = self:__newVector3("position",x,y,z)
+    self:__setParams("position",pos)
+end
+
+function BaseModel:getPosition()
+    return self:__getParams("position")
+end
+
+-- 旋转
+function BaseModel:setRotation(x,y,z)
+    local rotation = self:__newVector3("rotation",x,y,z)
+    self:__setParams("rotation",rotation)
+end
+
+function BaseModel:getRotation()
+    return self:__getParams("rotation")
+end
+
+-- 缩放
+function BaseModel:setScale(x,y,z)
+    local scale = self:__newVector3("scale",x,y,z)
+    self:__setParams("scale",scale)
+end
+
+function BaseModel:getScale()
+    self:__getParams("scale")
+end
+
+
+function BaseModel:__newVector3(type,x,y,z)
+    local old  = self:__getParams(type) or Vector3.New(0,0,0)
+    x = x or old.x
+    y = y or old.y
+    z = z or old.z
+
+    return Vector3.New(x,y,z)
+end
+
+function BaseModel:__initSwitch()
+    self.switchs = {
+        parent   =
+        {
+            set = function(value)
+                self.model.transform.parent = value
+            end,
+            get = function()
+                return self.model.transform.parent
+            end
+        },
+        position = {
+            set = function(value)
+                self.model.transform.localPosition = value
+            end,
+            get = function()
+                return self.model.transform.localPosition
+            end,
+        },
+        rotation = {
+            set = function(value)
+                self.model.transform.localRotation = value
+            end,
+            get = function()
+                return self.model.transform.localRotation
+            end
+        },
+        scale = {
+            set = function(value)
+                self.model.transform.localScale = value
+            end,
+            get = function()
+                return self.model.transform.localScale
+            end
+        },
+    }
+end
+
+function BaseModel:__setParams(key,value)
+    self.params[key] = value
+
+    if not self.model then
+        return
+    end
+
+    local switch = self.switchs[key]
+    if switch and switch.set then
+        switch.set(value)
+    end
+end
+
+function BaseModel:__getParams(key)
+    if not self.model then
+        return self.params[key]
+    end
+
+    local switch = self.switchs[key]
+    if switch and switch.get then
+        switch.get(key)
+    end
+end
+
+function BaseModel:__initWithParams()
+    for k,v in pairs(self.params) do
+        self:__setParams(k,v)
+    end
+end
 
 --------------------------------------------------------------------------------------------
 --------------------------      控制变量        ---------------------------------------------
@@ -53,8 +171,8 @@ function BaseModel:setFloat(key,value)
     self:setValue(Core.Model.KEY_TYPE.FLOAT,key,value)
 end
 
-function BaseModel:setBool(key,value)
-    self:setValue(Core.Model.KEY_TYPE.TRIGGER,key,value)
+function BaseModel:trigger(key)
+    self:setValue(Core.Model.KEY_TYPE.TRIGGER,key,nil)
 end
 
 function BaseModel:setValue(type,key,value)
@@ -69,14 +187,49 @@ function BaseModel:setValue(type,key,value)
     end
 
     if type == Core.Model.KEY_TYPE.BOOL then
-        self:SetBool(key,value and true or false )
+        animator:SetBool(key,value and true or false )
     elseif type == Core.Model.KEY_TYPE.FLOAT then
-        self:SetFloat(key,value)
+        animator:SetFloat(key,value)
     elseif type == Core.Model.KEY_TYPE.INT then
-        self:SetInt(key,value)
+        animator:SetInt(key,value)
     elseif type == Core.Model.KEY_TYPE.TRIGGER then
-        self:Trigger(key)
+        animator:Trigger(key)
     end
+end
+
+
+function BaseModel:getBool(key)
+    return self:getValue(Core.Model.KEY_TYPE.BOOL,key)
+end
+
+function BaseModel:getInt(key)
+    return self:getValue(Core.Model.KEY_TYPE.INT,key)
+end
+
+function BaseModel:getFloat(key)
+    return self:getValue(Core.Model.KEY_TYPE.FLOAT,key)
+end
+
+function BaseModel:getValue(type,key)
+    if not self.model then
+        return nil
+    end
+
+    local animator = self.model:GetComponent("Animator")
+    if not animator then
+        error("Animator 组件不存在！")
+        return nil
+    end
+
+    if type == Core.Model.KEY_TYPE.BOOL then
+        return animator:GetBool(key)
+    elseif type == Core.Model.KEY_TYPE.FLOAT then
+        return animator:GetFloat(key)
+    elseif type == Core.Model.KEY_TYPE.INT then
+        return animator:GetInt(key)
+    end
+
+    return nil
 end
 
 
