@@ -12,4 +12,5 @@ Core.Debug      = import(".Debug.Init")
 Core.Event      = import(".Event.Init")
 Core.Loader     = import(".Loader.Init")
 Core.Model      = import(".Model.Init")
+Core.Timer      = import(".Timer")
 return Core 

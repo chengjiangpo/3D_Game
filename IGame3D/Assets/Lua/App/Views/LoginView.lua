@@ -33,6 +33,10 @@ function LoginView:initUI()
                 self.model:setBool(params[i],i == self.index)
             end
         end
+
+--        Core.Timer.addTimer(0.1,0,function()
+--            self.model:test()
+--        end)
      end))
 end
 

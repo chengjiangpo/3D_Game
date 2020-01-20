@@ -14,6 +14,7 @@ public class Main : MonoBehaviour
         // 启动Lua 
         gameObject.AddComponent<LuaManager>();
         gameObject.AddComponent<ABLoader>();
+        gameObject.GetComponent<Animator>();
 
     }
 

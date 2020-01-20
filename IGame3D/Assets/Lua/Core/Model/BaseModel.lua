@@ -36,8 +36,6 @@ function BaseModel:onLoaded()
     self:dispatch(Core.Model.EVENTS.LOADED,self.modelName)
 end
 
-
-
 -----------------------------------------------------------------------------------------------
 --------------------------------      属性设置和获取        ------------------------------------
 -- 父节点
@@ -159,6 +157,21 @@ end
 
 --------------------------------------------------------------------------------------------
 --------------------------      控制变量        ---------------------------------------------
+function BaseModel:getAnimator()
+    if not self.model then
+        error("model is not inited!")
+        return
+    end
+
+    local animator = self.model:GetComponent("Animator")
+    if not animator then
+        error("Animator 组件不存在！"..self.modelName)
+        return
+    end
+
+    return animator
+end
+
 function BaseModel:setBool(key,value)
     self:setValue(Core.Model.KEY_TYPE.BOOL,key,value)
 end
@@ -180,9 +193,8 @@ function BaseModel:setValue(type,key,value)
         return
     end
 
-    local animator = self.model:GetComponent("Animator")
+    local animator = self:getAnimator()
     if not animator then
-        error("Animator 组件不存在！")
         return
     end
 
@@ -196,7 +208,6 @@ function BaseModel:setValue(type,key,value)
         animator:Trigger(key)
     end
 end
-
 
 function BaseModel:getBool(key)
     return self:getValue(Core.Model.KEY_TYPE.BOOL,key)
@@ -232,6 +243,24 @@ function BaseModel:getValue(type,key)
     return nil
 end
 
+
+function BaseModel:test()
+    local animator = self.model:GetComponent("Animator")
+    if not animator then
+        return
+    end
+
+    local list = {"idle","run","dead"}
+    local state = animator:GetCurrentAnimatorStateInfo(0)
+    for i = 1,#list do
+        if state:IsName(""..list[i]) then
+            print(string.format("当前动作：%s, time = %f,length = %f",list[i],state.normalizedTime,state.length))
+            if state.normalizedTime >= 1 then
+                animator.speed = 0
+            end
+        end
+    end
+end
 
 -----------------------------------------------------------------------------------------------
 ----------------------------------      事件监听        ----------------------------------------
