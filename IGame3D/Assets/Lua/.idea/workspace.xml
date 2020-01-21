@@ -44,8 +44,8 @@
       <file leaf-file-name="LoginView.lua" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/Views/LoginView.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="38" column="14" lean-forward="true" selection-start-line="36" selection-start-column="10" selection-end-line="38" selection-end-column="14" />
+            <state relative-caret-position="1107">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
@@ -311,7 +311,7 @@
       <workItem from="1578968226125" duration="4798000" />
       <workItem from="1579414849377" duration="4280000" />
       <workItem from="1579421552678" duration="8347000" />
-      <workItem from="1579484816874" duration="16444000" />
+      <workItem from="1579484816874" duration="16744000" />
     </task>
     <task id="LOCAL-00001" summary="aaaaa">
       <created>1578972099970</created>
@@ -324,11 +324,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92143000" />
+    <option name="totallyTimeSpent" value="92443000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -719,8 +718,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Views/LoginView.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="38" column="14" lean-forward="true" selection-start-line="36" selection-start-column="10" selection-end-line="38" selection-end-column="14" />
+        <state relative-caret-position="1107">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
