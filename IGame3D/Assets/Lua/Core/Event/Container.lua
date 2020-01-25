@@ -32,13 +32,13 @@ end
 --[[
         添加事件监听
 ]]
-function Container:addListener(event,callback,listener)
+function Container:addListener(event,callback,listener,time)
     if self:isExist(event,listener) then 
         warn(string.format("event listener[ %s ] is alread added!",event.name))
         return 
     end
     
-    local obj = Listener.new(event,callback,listener)
+    local obj = Listener.new(event,callback,listener,time)
     self.listenerMap[event] = self.listenerMap[event] or {}
     table.insert(self.listenerMap[event],obj)
 end
@@ -74,8 +74,8 @@ end
 function Container:dispatch(event,...)
     -- 调用event中的数据结构接口整理数据
     local params = nil 
-    if event.handler and type(handler) == "function" then 
-        params = event.handler(...) 
+    if event.handler and type(event.handler) == "function" then
+        params = event.handler(...)
     end
 
     local dispatchList = {}

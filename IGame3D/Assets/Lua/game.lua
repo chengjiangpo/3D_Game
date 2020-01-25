@@ -14,9 +14,7 @@ end
 
 function Game:start()
     print("Game.start")
---    local loginView = require("Game.Views.LoginView").new()
---    loginView:setParent(fgui.GRoot.inst)
-    App.ViewManager:openView(App.Views.LOGIN_VIEW)
+    App.View.Manager:openView(App.View.Views.LOGIN_VIEW)
 end
 
 return Game

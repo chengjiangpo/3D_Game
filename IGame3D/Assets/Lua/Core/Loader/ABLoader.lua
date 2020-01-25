@@ -35,16 +35,26 @@ function ABLoader:findStore(abPath)
     return self.loadedMap[abPath]
 end
 
+function ABLoader:newABStore(abPath)
+    local abStore = ABStore.new(abPath)
+    self.loadedMap[abPath] = abStore
+    return abStore
+end
+
 function ABLoader:load(abPath)
     abPath = string.lower(abPath)
-    local abStore = self:findStore(abPath) or ABStore.new(abPath)
+    local abStore = self:findStore(abPath) or self:newABStore(abPath)
     abStore:load()
     local ab = abStore:getABRes()
+    if not ab then
+        warn("ab is not exist: "..abPath)
+    end
     return ab
 end
 
 function ABLoader:loadAsync(abPath,callback)
-    local abStore = self:findStore(abPath) or ABStore.new(abPath)
+    local abStore = self:findStore(abPath) or self:newABStore(abPath)
+    self.loadedMap[abPath] = abStore
     abStore:loadAsync(callback)
 end
 
@@ -57,6 +67,15 @@ function ABLoader:unload(abPath)
 
         end
     end
+end
+
+function ABLoader:loadAsset(ab,assetName)
+    if not ab then
+       warn("ab is nil!")
+        return
+    end
+
+    return IGame3D.ABLoader.loadAsset(ab,assetName)
 end
 
 ------------------------------------------------------------------------------------------------

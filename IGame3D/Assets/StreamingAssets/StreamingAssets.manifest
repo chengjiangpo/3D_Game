@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 1273034344
+CRC: 2026679113
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -64,4 +64,7 @@ AssetBundleManifest:
       Dependencies: {}
     Info_20:
       Name: fgui/fightsimulator
+      Dependencies: {}
+    Info_21:
+      Name: model/role/liubei
       Dependencies: {}

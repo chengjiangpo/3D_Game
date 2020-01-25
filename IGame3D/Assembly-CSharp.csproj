@@ -268,6 +268,7 @@
      <Compile Include="Assets\Source\Generate\UnityEngine_AnimationClipWrap.cs" />
      <Compile Include="Assets\Source\Generate\UnityEngine_AnimationStateWrap.cs" />
      <Compile Include="Assets\Source\Generate\UnityEngine_AnimationWrap.cs" />
+     <Compile Include="Assets\Source\Generate\UnityEngine_AnimatorStateInfoWrap.cs" />
      <Compile Include="Assets\Source\Generate\UnityEngine_AnimatorWrap.cs" />
      <Compile Include="Assets\Source\Generate\UnityEngine_ApplicationWrap.cs" />
      <Compile Include="Assets\Source\Generate\UnityEngine_AssetBundleWrap.cs" />

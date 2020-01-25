@@ -65,5 +65,12 @@ namespace IGame3D
         {
             Resources.UnloadUnusedAssets();
         }
+
+
+        static public Object loadAsset(AssetBundle ab,string name)
+        {
+            Object asset = ab.LoadAsset(name) as Object;
+            return asset;
+        }
     }
 }

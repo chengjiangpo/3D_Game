@@ -76,8 +76,8 @@ function ViewManager:__onOpenView(view)
 
     -- 检查当前界面的类型，判断前面的界面的处理方式
     local viewType = view:getViewType()
-    if viewType.type == App.Views.TYPE.ROOT
-            or viewType.type == App.Views.TYPE.CLEAN
+    if viewType.type == App.View.Views.TYPE.ROOT
+            or viewType.type == App.View.Views.TYPE.CLEAN
     then
         -- 清空所有队列
         for i = #self.views,1,-1 do
@@ -94,7 +94,7 @@ function ViewManager:__onOpenView(view)
     end
 
     -- 添加到队列中
-    view:setParent(App.Layers.UILayer)
+    view:setParent(App.View.Layers.UILayer)
     table.insert(self.views,view)
 end
 

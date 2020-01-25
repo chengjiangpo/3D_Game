@@ -1,0 +1,53 @@
+ManifestFileVersion: 0
+CRC: 1976010880
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b95a4022da4dd63f214f1e7db550a127
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 25452a128949745f0c60d1d39f7dd31b
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 221
+  Script: {instanceID: 0}
+Assets:
+- Assets/ABAssets/Object/Act/liubei/liubei_med_001_dead.FBX
+- Assets/ABAssets/Object/Act/liubei/Materials/Standard_1.mat
+- Assets/ABAssets/Object/Act/liubei/liubei.controller
+- Assets/ABAssets/Object/Act/liubei/liubei_prefab.prefab
+- Assets/ABAssets/Object/Act/liubei/liubei_med_001_attack1.FBX
+- Assets/ABAssets/Object/Act/liubei/liubei_med_001_combat.FBX
+- Assets/ABAssets/Object/Act/liubei/New Animator Override Controller.overrideController
+- Assets/ABAssets/Object/Act/liubei/liubei_med_001_attack6.FBX
+- Assets/ABAssets/Object/Act/liubei/liubei_med_001_attack5.FBX
+- Assets/ABAssets/Object/Act/liubei/liubei_med_001_attack4.FBX
+- Assets/ABAssets/Object/Act/liubei/liubei_med_001_Tpose.FBX
+- Assets/ABAssets/Object/Act/liubei/liubei_med_001_ready.FBX
+- Assets/ABAssets/Object/Act/liubei/liubei_med_001_attack3.FBX
+- Assets/ABAssets/Object/Act/liubei/liubei_med_001_attack2.FBX
+- Assets/ABAssets/Object/Act/liubei/liubei_med_001_run.FBX
+- Assets/ABAssets/Object/Act/liubei/Materials/liubei_med_001.tga
+Dependencies: []

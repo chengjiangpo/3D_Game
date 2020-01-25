@@ -13,5 +13,5 @@
 local Loader = {}
 Loader.ABLoader     = import(".ABLoader").new()
 Loader.FguiLoader   = import(".FguiLoader").new()
-
+Loader.ModelLoader  = import(".ModelLoader").new()
 return Loader
