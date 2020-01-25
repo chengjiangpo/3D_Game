@@ -18,7 +18,6 @@ function LoginView:initUI()
     local btnLogin = self:getChild("btn_login")
     btnLogin.onClick:Set(delegate(function()
         App.ViewManager:openView(App.Views.HOME_VIEW)
-
      end))
 end
 
